@@ -1,0 +1,38 @@
+DROP DATABASE IF EXISTS ENCUESTAS;
+CREATE DATABASE IF NOT EXISTS encuestas;
+USE encuestas;
+
+CREATE TABLE encuesta (
+    idEncuesta INT PRIMARY KEY AUTO_INCREMENT,
+    edad INT,
+    sexo VARCHAR(7),
+    bebidas_semana INT,
+    cervezas_semana INT,
+    bebidas_fin_semana INT, 
+    bebidas_destiladas_semana INT,
+    vinos_semana INT, 
+    perdidas_control BOOLEAN, 
+    diversion_dependencia_alcohol BOOLEAN,
+    problemas_digestivos BOOLEAN,
+    tension_alta BOOLEAN,
+    dolor_cabeza BOOLEAN
+);
+
+INSERT INTO encuesta
+(conn, edad, sexo, bebidas_semana, cervezas_semana, bebidas_fin_semana, bebidas_destiladas_semana, vinos_semana, perdidas_control, diversion_dependencia_alcohol, problemas_digestivos, tension_alta, dolor_cabeza)
+VALUES
+(1, 'Mujer', 5, 5, 5, 0, 3, FALSE, TRUE, FALSE, TRUE, FALSE),
+(2, 'Mujer', 6, 4, 5, 1, 2, TRUE, TRUE, FALSE, TRUE, FALSE),
+(3, 'Hombre', 0, 0, 0, 0, 0, FALSE, FALSE, FALSE, FALSE, FALSE),
+(4, 'Hombre', 0, 0, 0, 0, 0, FALSE, FALSE, FALSE, FALSE, FALSE),
+(5, 'Hombre', 20, 15, 10, 5, 0, TRUE, FALSE, FALSE, TRUE, FALSE),
+(6, 'Hombre', 1, 12, 45, 12, 23, TRUE, FALSE, FALSE, TRUE, FALSE),
+(7, 'Hombre', 2, 0, 2, 2, 0, FALSE, FALSE, FALSE, FALSE, FALSE),
+(8, 'Hombre', 3, 5, 5, 5, 0, TRUE, FALSE, FALSE, TRUE, TRUE),
+(9, 'Hombre', 0, 0, 0, 0, 0, FALSE, FALSE, FALSE, FALSE, FALSE),
+(10, 'Hombre', 2, 10, 5, 1, 5, FALSE, FALSE, FALSE, TRUE, FALSE);
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'campusfp';
+
+
